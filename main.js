@@ -16,3 +16,14 @@ Array.prototype.myFilter=function(procedure){
 }
 
 console.log(arr.myFilter(element=> element%2===0));
+
+Array.prototype.myFindIndex=function(procedure){
+
+    for (let i=0;i<this.length;++i){
+        if (procedure(this[i]))
+            return i;
+    }
+    return -1;
+}
+
+console.log(arr.myFindIndex(element=>element>100));
