@@ -6,3 +6,13 @@ Array.prototype.myMap=function(procedure){
     return output;
 }
 console.log(arr.myMap(element=> element*2));
+
+Array.prototype.myFilter=function(procedure){
+    const output =[];
+    for (let element in this)
+        if (procedure(element))
+            output.push(element);
+    return output;
+}
+
+console.log(arr.myFilter(element=> element%2===0));
